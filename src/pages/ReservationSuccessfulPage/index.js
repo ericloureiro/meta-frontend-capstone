@@ -1,0 +1,1 @@
+export { ReservationSuccessfulPage } from "./ReservationSuccessfulPage";
