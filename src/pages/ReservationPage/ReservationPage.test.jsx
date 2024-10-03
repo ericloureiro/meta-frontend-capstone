@@ -1,22 +1,13 @@
 import { BrowserRouter, useSubmit } from "react-router-dom";
-import { debug } from "jest-preview";
+
 import { ReservationPage } from "./ReservationPage";
-import { queryByText, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/react";
 
 const mockNavigate = jest.fn();
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockNavigate,
-}));
-
-const mockSubmit = jest.fn();
-
-jest.mock("../../hooks/useSubmit", () => ({
-  useSubmit: () => ({
-    submit: mockSubmit,
-  }),
 }));
 
 const renderPage = () => {
